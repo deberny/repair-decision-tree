@@ -431,6 +431,9 @@ treeJSON = d3.json("decisionTree.json", function(error, treeData) {
             .text(function(d) {
                 return d.name;
             })
+            .attr('class', function(d) {
+              if(d.sor_code) { return 'sor' }
+            })
             .style("fill-opacity", 0);
 
         // phantom node to give us mouseover in a radius around it
