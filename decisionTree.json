@@ -1,0 +1,891 @@
+[
+  {
+    "name": "Room choice",
+    "parent": "null",
+    "question": "In which room is the problem located?",
+    "children": [
+      {
+        "name": "Kitchen",
+        "parent": "Room choice",
+        "next": "kitchen_problem",
+        "question": "What is the problem in your kitchen?",
+        "children": [
+          {
+            "name": "Cupboards or Worktop",
+            "parent": "Kitchen",
+            "desc": "inside_kitchen_cupboards",
+            "sor_code": 20040060,
+            "problem": "Cupboards or Worktop"
+          },
+          {
+            "name": "Damp or Mould",
+            "parent": "Kitchen",
+            "page": "damp_and_mould",
+            "children": [
+              {
+                "name": "View damp or mould video",
+                "parent": "Damp or mould"
+              },
+              {
+                "name": "Choose damp or mould",
+                "parent": "Damp or mould",
+                "children": [
+                  {
+                    "name": "Damp",
+                    "parent": "Choose damp or mould",
+                    "desc": "damp",
+                    "sor_code": "PRE00001",
+                    "problem": "Damp"
+                  },
+                  {
+                    "name": "Mould",
+                    "parent": "Choose damp or mould",
+                    "desc": "mould",
+                    "sor_code": 20496,
+                    "problem": "Mould"
+                  },
+                  {
+                    "name": "I'm not sure",
+                    "parent": "Choose damp or mould",
+                    "problem": "Damp or mould"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Electrical",
+            "parent": "Kitchen",
+            "next": "kitchen_electrical_problem",
+            "question": "Is your problem one of these?",
+            "children": [
+              {
+                "name": "Extractor fan",
+                "parent": "Electrical",
+                "next": "is_fan_leaking_water",
+                "children": [
+                  {
+                    "name": "Yes",
+                    "parent": "Extractor fan",
+                    "page": "emergency_contact",
+                    "children": [
+                      {
+                        "name": "Emergency contact",
+                        "parent": "Yes"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "No",
+                    "parent": "Extractor fan",
+                    "desc": "inside_kitchen_extractor_fan",
+                    "sor_code": 20110010,
+                    "problem": "Extractor fan"
+                  }
+                ]
+              },
+              {
+                "name": "Light fitting",
+                "parent": "Electrical",
+                "next": "water_leaking_into_light",
+                "children": [
+                  {
+                    "name": "Yes",
+                    "parent": "Light fitting",
+                    "page": "emergency_contact",
+                    "children": [
+                      {
+                        "name": "Emergency contact",
+                        "parent": "Yes"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "No",
+                    "parent": "Light fitting",
+                    "next": "light_check_trip_switches",
+                    "children": [
+                      {
+                        "name": "Yes",
+                        "parent": "No",
+                        "next": "light_check_bulb",
+                        "question": "Have you replaced the light bulb?",
+                        "children": [
+                          {
+                            "name": "Yes",
+                            "parent": "Yes",
+                            "desc": "inside_light_fitting",
+                            "problem": "Light fitting"
+                          },
+                          {
+                            "name": "No",
+                            "parent": "Yes",
+                            "page": "replace_lightbulb"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "No",
+                        "parent": "No",
+                        "page": "check_fusebox"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Light switch",
+                "parent": "Electrical",
+                "desc": "inside_kitchen_light_switch",
+                "problem": "Light switch"
+              },
+              {
+                "name": "Smoke detector is beeping",
+                "parent": "Electrical",
+                "page": "smoke_detector"
+              },
+              {
+                "name": "Sockets",
+                "parent": "Electrical",
+                "desc": "inside_sockets",
+                "sor_code": 20110010,
+                "problem": "Sockets"
+              },
+              {
+                "name": "Something else",
+                "parent": "Electrical",
+                "desc": "kitchen_problem",
+                "sor_code": 20110010,
+                "problem": "Electrical"
+              }
+            ]
+          },
+          {
+            "name": "Heating / Hot water",
+            "parent": "Kitchen",
+            "next": "heating_problem",
+            "question": "Is your problem one of these?",
+            "children": [
+              {
+                "name": "I have no heating",
+                "parent": "Heating / Hot water",
+                "page": "heating_repairs"
+              },
+              {
+                "name": "I have no hot water",
+                "parent": "Heating / Hot water",
+                "page": "emergency_contact",
+                "children": [
+                  {
+                    "name": "Emergency contact",
+                    "parent": "I have no hot water"
+                  }
+                ]
+              },
+              {
+                "name": "Radiator is not working",
+                "parent": "Heating / Hot water",
+                "sor_code": "4896816H",
+                "problem": "Radiator is not working"
+              },
+              {
+                "name": "Radiator is coming loose",
+                "parent": "Heating / Hot water",
+                "sor_code": "4896816H",
+                "problem": "Radiator is coming loose"
+              },
+              {
+                "name": "Radiator is leaking - containable",
+                "parent": "Heating / Hot water",
+                "sor_code": "4896816H",
+                "problem": "Radiator is leaking - containable"
+              },
+              {
+                "name": "Something else",
+                "parent": "Heating / Hot water",
+                "desc": "heating_problem",
+                "problem": "Heating / Hot water"
+              }
+            ]
+          },
+          {
+            "name": "Sink",
+            "parent": "Kitchen",
+            "next": "sink_problem",
+            "question": "Is your problem one of these?",
+            "children": [
+              {
+                "name": "Sink is blocked",
+                "parent": "Sink",
+                "page": "unblock_sink",
+                "sor_code": 20060030,
+                "problem": "Sink is blocked"
+              },
+              {
+                "name": "Sink is leaking - containable",
+                "parent": "Sink",
+                "desc": "inside_kitchen_sink_leaking",
+                "sor_code": 20060030,
+                "problem": "Sink is leaking - containable"
+              },
+              {
+                "name": "Tap won't turn off - water running",
+                "parent": "Sink",
+                "page": "emergency_contact",
+                "children": [
+                  {
+                    "name": "Emergency contact",
+                    "parent": "Tap won't turn off - water running"
+                  }
+                ]
+              },
+              {
+                "name": "Tap is dripping",
+                "parent": "Sink",
+                "sor_code": 20060030,
+                "problem": "Tap is dripping"
+              },
+              {
+                "name": "Tap is broken",
+                "parent": "Sink",
+                "desc": "inside_kitchen_broken_tap",
+                "sor_code": 20060030,
+                "problem": "Tap is broken"
+              },
+              {
+                "name": "Something else",
+                "parent": "Sink",
+                "desc": "sink_problem",
+                "sor_code": 20060030,
+                "problem": "Sink"
+              }
+            ]
+          },
+          {
+            "name": "Windows",
+            "parent": "Kitchen",
+            "next": "window_problem",
+            "children": [
+              {
+                "name": "Window is not shutting / locking properly - uPVC",
+                "parent": "Windows",
+                "desc": "inside_window_not_shutting",
+                "sor_code": 20040310,
+                "problem": "Window is not shutting / locking properly - uPVC"
+              },
+              {
+                "name": "Window is not shutting / locking properly - Wood",
+                "parent": "Windows",
+                "desc": "inside_window_not_shutting",
+                "sor_code": 20040010,
+                "problem": "Window is not shutting / locking properly - Wood"
+              },
+              {
+                "name": "Damage to glazing",
+                "parent": "Windows",
+                "desc": "inside_window_damage",
+                "problem": "Damage to glazing"
+              },
+              {
+                "name": "Something else",
+                "parent": "Windows",
+                "desc": "window_problem",
+                "sor_code": 20040010,
+                "problem": "Window"
+              }
+            ]
+          },
+          {
+            "name": "Something else",
+            "parent": "Kitchen",
+            "desc": "kitchen_problem"
+          }
+        ]
+      },
+      {
+        "name": "Bathroom",
+        "parent": "Room choice",
+        "next": "bathroom_problem",
+        "question": "What is the problem in your bathroom?",
+        "children": [
+          {
+            "name": "Basin / Sink",
+            "parent": "Bathroom",
+            "next": "basin_problem",
+            "children": [
+              {
+                "name": "Basin / Sink is blocked",
+                "parent": "Basin / Sink",
+                "page": "unblock_sink",
+                "sor_code": 20060020,
+                "problem": "Basin / Sink is blocked"
+              },
+              {
+                "name": "Basin / Sink is leaking - containable",
+                "parent": "Basin / Sink",
+                "desc": "inside_bathroom_basin_leaking",
+                "sor_code": 20060020,
+                "problem": "Basin / Sink is leaking - containable"
+              },
+              {
+                "name": "Tap won't turn off - water running",
+                "parent": "Basin / Sink",
+                "page": "emergency_contact",
+                "children": [
+                  {
+                    "name": "Emergency contact",
+                    "parent": "Tap won't turn off - water running"
+                  }
+                ]
+              },
+              {
+                "name": "Tap is dripping",
+                "parent": "Basin / Sink",
+                "sor_code": 20060020,
+                "problem": "Tap is dripping"
+              },
+              {
+                "name": "Tap is broken",
+                "parent": "Basin / Sink",
+                "sor_code": 20060020,
+                "problem": "Tap is broken"
+              },
+              {
+                "name": "Something else",
+                "parent": "Basin / Sink",
+                "desc": "sink_problem",
+                "sor_code": 20060020,
+                "problem": "Basin / Sink"
+              }
+            ]
+          },
+          {
+            "name": "Bath",
+            "parent": "Bathroom",
+            "next": "bath_problem",
+            "children": [
+              {
+                "name": "Bath is blocked",
+                "parent": "Bath",
+                "sor_code": 20060020,
+                "problem": "Bath is blocked"
+              },
+              {
+                "name": "Bath is leaking - containable",
+                "parent": "Bath",
+                "desc": "inside_bathroom_bath_leaking",
+                "sor_code": 20060020,
+                "problem": "Bath is leaking - containable"
+              },
+              {
+                "name": "Tap won't turn off - water running",
+                "parent": "Bath",
+                "page": "emergency_contact",
+                "children": [
+                  {
+                    "name": "Emergency contact",
+                    "parent": "Tap won't turn off - water running"
+                  }
+                ]
+              },
+              {
+                "name": "Tap is dripping",
+                "parent": "Bath",
+                "sor_code": 20060020,
+                "problem": "Tap is dripping"
+              },
+              {
+                "name": "Tap is broken",
+                "parent": "Bath",
+                "sor_code": 20060020,
+                "problem": "Tap is broken"
+              },
+              {
+                "name": "Something else",
+                "parent": "Bath",
+                "desc": "bath_problem",
+                "sor_code": 20060020,
+                "problem": "Bath"
+              }
+            ]
+          },
+          {
+            "name": "Damp or mould",
+            "parent": "Bathroom",
+            "page": "damp_and_mould",
+            "children": [
+              {
+                "name": "View damp or mould video",
+                "parent": "Damp or mould"
+              },
+              {
+                "name": "Choose damp or mould",
+                "parent": "Damp or mould",
+                "children": [
+                  {
+                    "name": "Damp",
+                    "parent": "Choose damp or mould",
+                    "desc": "damp",
+                    "sor_code": "PRE00001",
+                    "problem": "Damp"
+                  },
+                  {
+                    "name": "Mould",
+                    "parent": "Choose damp or mould",
+                    "desc": "mould",
+                    "sor_code": 20496,
+                    "problem": "Mould"
+                  },
+                  {
+                    "name": "I'm not sure",
+                    "parent": "Choose damp or mould",
+                    "problem": "Damp or mould"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Electrical",
+            "parent": "Bathroom",
+            "next": "bathroom_electrical_problem",
+            "children": [
+              {
+                "name": "Extractor fan",
+                "parent": "Electrical",
+                "next": "is_fan_leaking_water",
+                "children": [
+                  {
+                    "name": "Yes",
+                    "parent": "Extractor fan",
+                    "page": "emergency_contact",
+                    "children": [
+                      {
+                        "name": "Emergency contact",
+                        "parent": "Yes"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "No",
+                    "parent": "Extractor fan",
+                    "desc": "inside_kitchen_extractor_fan",
+                    "sor_code": 20110010,
+                    "problem": "Extractor fan"
+                  }
+                ]
+              },
+              {
+                "name": "Light fitting",
+                "parent": "Electrical",
+                "next": "water_leaking_into_light",
+                "sor_code": 20110010,
+                "children": [
+                  {
+                    "name": "Yes",
+                    "parent": "Light fitting",
+                    "page": "emergency_contact",
+                    "children": [
+                      {
+                        "name": "Emergency contact",
+                        "parent": "Yes"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "No",
+                    "parent": "Light fitting",
+                    "next": "light_check_trip_switches",
+                    "children": [
+                      {
+                        "name": "Yes",
+                        "parent": "No",
+                        "next": "light_check_bulb",
+                        "question": "Have you replaced the light bulb?",
+                        "children": [
+                          {
+                            "name": "Yes",
+                            "parent": "Yes",
+                            "desc": "inside_light_fitting",
+                            "problem": "Light fitting"
+                          },
+                          {
+                            "name": "No",
+                            "parent": "Yes",
+                            "page": "replace_lightbulb"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "No",
+                        "parent": "No",
+                        "page": "check_fusebox"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Light switch",
+                "parent": "Electrical",
+                "page": "electrical_hazard_warning",
+                "sor_code": 20110010
+              },
+              {
+                "name": "Something else",
+                "parent": "Electrical",
+                "desc": "bathroom_problem",
+                "sor_code": 20110010,
+                "problem": "Electrical"
+              }
+            ]
+          },
+          {
+            "name": "Heating / Hot water",
+            "parent": "Bathroom",
+            "next": "heating_problem"
+          },
+          {
+            "name": "Toilet",
+            "parent": "Bathroom",
+            "next": "toilet_problem",
+            "question": "Is your problem one of these?",
+            "children": [
+              {
+                "name": "Toilet is blocked",
+                "parent": "Toilet",
+                "page": "toilet_unblock_info",
+                "children": [
+                  {
+                    "name": "View toilet unblock info page",
+                    "parent": "Toilet is blocked"
+                  },
+                  {
+                    "name": "Choose to continue blocked toilet report",
+                    "parent": "Toilet is blocked",
+                    "question": "Is this your only toilet?",
+                    "children": [
+                      {
+                        "name": "Yes",
+                        "parent": "Choose to continue blocked toilet report",
+                        "page": "emergency_contact",
+                        "children": [
+                          {
+                            "name": "Emergency contact",
+                            "parent": "Yes"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "No",
+                        "parent": "Choose to continue blocked toilet report",
+                        "desc": "toilet_problem",
+                        "sor_code": 20060020,
+                        "problem": "Toilet is blocked"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Toilet is not flushing",
+                "parent": "Toilet",
+                "desc": "toilet_problem",
+                "sor_code": 20060020,
+                "problem": "Toilet is not flushing"
+              },
+              {
+                "name": "Toilet is damaged",
+                "parent": "Toilet",
+                "desc": "inside_bathroom_toilet_damaged",
+                "sor_code": 20060020,
+                "problem": "Toilet is damaged"
+              },
+              {
+                "name": "Toilet is leaking - containable",
+                "parent": "Toilet",
+                "desc": "inside_bathroom_toilet_leaking",
+                "sor_code": 20060020,
+                "problem": "Toilet is leaking - containable"
+              },
+              {
+                "name": "Something else",
+                "parent": "Toilet",
+                "desc": "toilet_problem",
+                "sor_code": 20060020,
+                "problem": "Toilet"
+              }
+            ]
+          },
+          {
+            "name": "Something else",
+            "parent": "Bathroom",
+            "desc": "bathroom_problem"
+          }
+        ]
+      },
+      {
+        "name": "Other",
+        "parent": "Room choice",
+        "next": "other_problem",
+        "children": [
+          {
+            "name": "Damp or mould",
+            "parent": "Other",
+            "page": "damp_and_mould",
+            "children": [
+              {
+                "name": "View damp or mould video",
+                "parent": "Damp or mould"
+              },
+              {
+                "name": "Choose damp or mould",
+                "parent": "Damp or mould",
+                "children": [
+                  {
+                    "name": "Damp",
+                    "parent": "Choose damp or mould",
+                    "desc": "damp",
+                    "sor_code": "PRE00001",
+                    "problem": "Damp"
+                  },
+                  {
+                    "name": "Mould",
+                    "parent": "Choose damp or mould",
+                    "desc": "mould",
+                    "sor_code": 20496,
+                    "problem": "Mould"
+                  },
+                  {
+                    "name": "I'm not sure",
+                    "parent": "Choose damp or mould",
+                    "problem": "Damp or mould"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Electrical",
+            "parent": "Other",
+            "next": "other_electrical_problem",
+            "children": [
+              {
+                "name": "Extractor fan",
+                "parent": "Electrical",
+                "next": "is_fan_leaking_water",
+                "children": [
+                  {
+                    "name": "Yes",
+                    "parent": "Extractor fan",
+                    "page": "emergency_contact",
+                    "children": [
+                      {
+                        "name": "Emergency contact",
+                        "parent": "Yes"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "No",
+                    "parent": "Extractor fan",
+                    "desc": "inside_kitchen_extractor_fan",
+                    "sor_code": 20110010,
+                    "problem": "Extractor fan"
+                  }
+                ]
+              },
+              {
+                "name": "Light fitting",
+                "parent": "Electrical",
+                "next": "water_leaking_into_light",
+                "children": [
+                  {
+                    "name": "Yes",
+                    "parent": "Light fitting",
+                    "page": "emergency_contact",
+                    "children": [
+                      {
+                        "name": "Emergency contact",
+                        "parent": "Yes"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "No",
+                    "parent": "Light fitting",
+                    "next": "light_check_trip_switches",
+                    "children": [
+                      {
+                        "name": "Yes",
+                        "parent": "No",
+                        "next": "light_check_bulb",
+                        "question": "Have you replaced the light bulb?",
+                        "children": [
+                          {
+                            "name": "Yes",
+                            "parent": "Yes",
+                            "desc": "inside_light_fitting",
+                            "problem": "Light fitting"
+                          },
+                          {
+                            "name": "No",
+                            "parent": "Yes",
+                            "page": "replace_lightbulb"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "No",
+                        "parent": "No",
+                        "page": "check_fusebox"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Light switch",
+                "parent": "Electrical",
+                "page": "electrical_hazard_warning",
+                "sor_code": 20110010,
+                "problem": "Light switch"
+              },
+              {
+                "name": "Smoke detector is beeping",
+                "parent": "Electrical",
+                "page": "emergency_contact",
+                "children": [
+                  {
+                    "name": "Emergency contact",
+                    "parent": "Smoke detector is beeping"
+                  }
+                ]
+              },
+              {
+                "name": "Carbon Monoxide detector is beeping",
+                "parent": "Electrical",
+                "page": "emergency_contact",
+                "children": [
+                  {
+                    "name": "Emergency contact",
+                    "parent": "Carbon Monoxide detector is beeping"
+                  }
+                ]
+              },
+              {
+                "name": "Sockets",
+                "parent": "Electrical",
+                "page": "electrical_hazard_warning",
+                "sor_code": 20110010,
+                "problem": "Sockets"
+              },
+              {
+                "name": "Something else",
+                "parent": "Electrical",
+                "desc": "electrical_problem",
+                "sor_code": 20110010,
+                "problem": "Electrical"
+              }
+            ]
+          },
+          {
+            "name": "External door",
+            "parent": "Other",
+            "next": "external_doors_problem",
+            "children": [
+              {
+                "name": "Front or back door is stiff or loose - uPVC",
+                "parent": "External door",
+                "desc": "other_external_door_stiff",
+                "sor_code": 20040310,
+                "problem": "Front or back door is stiff or loose - uPVC"
+              },
+              {
+                "name": "Front or back door is stiff or loose - Wood",
+                "parent": "External door",
+                "desc": "other_external_door_stiff",
+                "sor_code": 20040020,
+                "problem": "Front or back door is stiff or loose - Wood"
+              },
+              {
+                "name": "Door lock",
+                "parent": "External door",
+                "desc": "other_external_door_lock",
+                "problem": "Door lock"
+              },
+              {
+                "name": "Something else",
+                "parent": "External door",
+                "desc": "external_doors_problem",
+                "problem": "External door"
+              }
+            ]
+          },
+          {
+            "name": "Gas",
+            "parent": "Other",
+            "page": "emergency_contact",
+            "children": [
+              {
+                "name": "Emergency contact",
+                "parent": "Gas"
+              }
+            ]
+          },
+          {
+            "name": "Heating / Hot water",
+            "parent": "Other",
+            "next": "heating_problem"
+          },
+          {
+            "name": "Internal door",
+            "parent": "Other",
+            "desc": "other_internal_door",
+            "sor_code": 20040020,
+            "problem": "Internal door"
+          },
+          {
+            "name": "Windows",
+            "parent": "Other",
+            "next": "window_problem",
+            "children": [
+              {
+                "name": "Window is not shutting / locking properly - uPVC",
+                "parent": "Windows",
+                "desc": "inside_window_not_shutting",
+                "sor_code": 20040310,
+                "problem": "Window is not shutting / locking properly - uPVC"
+              },
+              {
+                "name": "Window is not shutting / locking properly - Wood",
+                "parent": "Windows",
+                "desc": "inside_window_not_shutting",
+                "sor_code": 20040010,
+                "problem": "Window is not shutting / locking properly - Wood"
+              },
+              {
+                "name": "Damage to glazing",
+                "parent": "Windows",
+                "desc": "inside_window_damage",
+                "problem": "Damage to glazing"
+              },
+              {
+                "name": "Something else",
+                "parent": "Windows",
+                "desc": "window_problem",
+                "sor_code": 20040010,
+                "problem": "Window"
+              }
+            ]
+          },
+          {
+            "name": "Something else",
+            "parent": "Other",
+            "desc": "describe_problem"
+          }
+        ]
+      }
+    ]
+  }
+]
