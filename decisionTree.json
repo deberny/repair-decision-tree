@@ -123,14 +123,26 @@
                         {
                           "name": "No",
                           "parent": "Yes",
-                          "page": "replace_lightbulb"
+                          "page": "replace_lightbulb",
+                          "children": [
+                            {
+                              "name": "View replace lightbulb video / Continue to book appointment",
+                              "parent": "No"
+                            }
+                          ]
                         }
                       ]
                     },
                     {
                       "name": "No",
                       "parent": "No",
-                      "page": "check_fusebox"
+                      "page": "check_fusebox",
+                      "children": [
+                        {
+                          "name": "Read instructions on fusebox check / Continue to book appointment",
+                          "parent": "No"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -178,7 +190,13 @@
             {
               "name": "I have no heating",
               "parent": "Heating / Hot water",
-              "page": "heating_repairs"
+              "page": "heating_repairs",
+              "children": [
+                {
+                  "name": "View page - video heating repairs / Call RCC to get appointment",
+                  "parent": "I have no heating"
+                }
+              ]
             },
             {
               "name": "I have no hot water",
@@ -228,7 +246,13 @@
               "parent": "Sink",
               "page": "unblock_sink",
               "sor_code": 20060030,
-              "problem": "Sink is blocked"
+              "problem": "Sink is blocked",
+              "children": [
+                {
+                  "name": "View unblock sink video / continue to book appointment",
+                  "parent": "Sink is blocked"
+                }
+              ]
             },
             {
               "name": "Sink is leaking - containable",
@@ -328,7 +352,13 @@
               "parent": "Basin / Sink",
               "page": "unblock_sink",
               "sor_code": 20060020,
-              "problem": "Basin / Sink is blocked"
+              "problem": "Basin / Sink is blocked",
+              "children": [
+                {
+                  "name": "View unblock sink video / continue to book appointment",
+                  "parent": "Sink is blocked"
+                }
+              ]
             },
             {
               "name": "Basin / Sink is leaking - containable",
@@ -527,14 +557,26 @@
                         {
                           "name": "No",
                           "parent": "Yes",
-                          "page": "replace_lightbulb"
+                          "page": "replace_lightbulb",
+                          "children": [
+                            {
+                              "name": "View replace lightbulb video / Continue to book appointment",
+                              "parent": "No"
+                            }
+                          ]
                         }
                       ]
                     },
                     {
                       "name": "No",
                       "parent": "No",
-                      "page": "check_fusebox"
+                      "page": "check_fusebox",
+                      "children": [
+                        {
+                          "name": "Read instructions on fusebox check / Continue to book appointment",
+                          "parent": "No"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -544,7 +586,13 @@
               "name": "Light switch",
               "parent": "Electrical",
               "page": "electrical_hazard_warning",
-              "sor_code": 20110010
+              "sor_code": 20110010,
+              "children": [
+                {
+                  "name": "View electrical hazard warning page / continue to book appointment",
+                  "parent": "Light switch"
+                }
+              ]
             },
             {
               "name": "Something else",
@@ -564,7 +612,13 @@
             {
               "name": "I have no heating",
               "parent": "Heating / Hot water",
-              "page": "heating_repairs"
+              "page": "heating_repairs",
+              "children": [
+                {
+                  "name": "View page - video heating repairs / Call RCC to get appointment",
+                  "parent": "I have no heating"
+                }
+              ]
             },
             {
               "name": "I have no hot water",
@@ -794,14 +848,26 @@
                         {
                           "name": "No",
                           "parent": "Yes",
-                          "page": "replace_lightbulb"
+                          "page": "replace_lightbulb",
+                          "children": [
+                            {
+                              "name": "View replace lightbulb video / Continue to book appointment",
+                              "parent": "No"
+                            }
+                          ]
                         }
                       ]
                     },
                     {
                       "name": "No",
                       "parent": "No",
-                      "page": "check_fusebox"
+                      "page": "check_fusebox",
+                      "children": [
+                        {
+                          "name": "Read instructions on fusebox check / Continue to book appointment",
+                          "parent": "No"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -812,7 +878,13 @@
               "parent": "Electrical",
               "page": "electrical_hazard_warning",
               "sor_code": 20110010,
-              "problem": "Light switch"
+              "problem": "Light switch",
+              "children": [
+                {
+                  "name": "View electrical hazard warning page / continue to book appointment",
+                  "parent": "Light switch"
+                }
+              ]
             },
             {
               "name": "Smoke detector is beeping",
@@ -841,7 +913,13 @@
               "parent": "Electrical",
               "page": "electrical_hazard_warning",
               "sor_code": 20110010,
-              "problem": "Sockets"
+              "problem": "Sockets",
+              "children": [
+                {
+                  "name": "View electrical hazard warning page / continue to book appointment",
+                  "parent": "Sockets"
+                }
+              ]
             },
             {
               "name": "Something else",
@@ -906,7 +984,13 @@
             {
               "name": "I have no heating",
               "parent": "Heating / Hot water",
-              "page": "heating_repairs"
+              "page": "heating_repairs",
+              "children": [
+                {
+                  "name": "View page - video heating repairs / Call RCC to get appointment",
+                  "parent": "I have no heating"
+                }
+              ]
             },
             {
               "name": "I have no hot water",
