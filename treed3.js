@@ -382,7 +382,7 @@ treeJSON = d3.json("decisionTree.json", function(error, treeData) {
             }
         };
         childCount(0, root);
-        var newHeight = d3.max(levelWidth) * 25; // 25 pixels per line
+        var newHeight = d3.max(levelWidth) * 55; // 50 pixels per line
         tree = tree.size([newHeight, viewerWidth]);
 
         // Compute the new tree layout.
@@ -435,6 +435,51 @@ treeJSON = d3.json("decisionTree.json", function(error, treeData) {
               if(d.sor_code) { return 'sor' }
             })
             .style("fill-opacity", 0);
+
+        nodeEnter.append("text")
+            .attr("x", function(d) {
+                return d.children || d._children ? -10 : 10;
+            })
+            .attr("dy", "1.5em")
+            .attr('class', 'nodeText')
+            .attr("text-anchor", function(d) {
+                return d.children || d._children ? "end" : "start";
+            })
+            .text(function(d) {
+                return d.sor_code;
+            })
+            .style("fill-opacity", 1);
+
+        nodeEnter.append("text")
+            .attr("x", function(d) {
+                return d.children || d._children ? -10 : 10;
+            })
+            .attr("dy", "2em")
+            .attr('class', 'nodeText')
+            .attr("text-anchor", function(d) {
+                return d.children || d._children ? "end" : "start";
+            })
+            .text(function(d) {
+                return d.page;
+            })
+            .style("fill-opacity", 1);
+
+        nodeEnter.append("text")
+            .attr("x", function(d) {
+                return d.children || d._children ? -10 : 10;
+            })
+            .attr("dy", "-2.5em")
+            .attr('class', 'nodeText')
+            .attr("text-anchor", function(d) {
+                return d.children || d._children ? "end" : "start";
+            })
+            .text(function(d) {
+                return d.question;
+            })
+            .attr('class', function(d) {
+              return 'question'
+            })
+            .style("fill-opacity", 1);
 
         // phantom node to give us mouseover in a radius around it
         nodeEnter.append("circle")
